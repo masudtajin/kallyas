@@ -1,0 +1,23 @@
+.services{
+    .service-content{
+        padding-bottom: 70px;
+        .services-items{
+            padding-right: 50px;
+            justify-content: space-between;
+            align-items: center ;
+        }
+    }
+    @include media (md){
+        .service-content{
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            .col-item{
+                margin-bottom: 60px;
+            }
+            &>*{
+                width: 100% !important;
+            }
+        }
+    }
+}

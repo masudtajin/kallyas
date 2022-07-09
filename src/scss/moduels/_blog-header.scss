@@ -1,0 +1,152 @@
+.header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    padding-top: 40px;
+    transition: all ease-in-out 300ms;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 400px;
+    @include media('md'){
+        background-image: none !important;
+        height: 85px;
+    }
+    &.sticky{
+        @media only screen and (min-width: 991px) {
+            height: 75px;
+            padding: 5px 0;
+            position: fixed;
+            background-color: var(--color-2);
+        }
+    }
+    @include media('md'){
+        position: fixed;
+        z-index: 99;
+        background-color: var(--color-1);
+        padding: 20px 0;
+        box-shadow: -1px -10px 20px 0px #c1c1c1;
+        .logo-area{
+            .logo-light{
+                display: none;
+            }
+            .logo-dark{
+                display: block !important;
+            }
+        }
+    }
+    @include media ('sm'){
+        .menu-btn{
+            span{
+            }
+        }
+    }
+    .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu-btn{
+            width: 45px;
+            height: 45px;
+            display: none;
+            justify-content: space-between;
+            background-color: transparent;
+            align-items: center;
+            flex-direction: column;
+            border: transparent;
+            padding: 5px 0;
+            position: relative;
+            @include media ('md'){
+                display: flex;
+            }
+            span{
+                height: 3px;
+                width: 100%;
+                background-color: var(--color-4);
+                top: 0;
+                position: relative;
+                @include transition;
+            }
+        }
+        .logo-area{
+            .logo-dark{
+                display: none;
+            }
+        }
+        .nav-area{
+            ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                li{
+                    display: inline-block;
+                    a{
+                        display: block;
+                        text-decoration: none;
+                        font-weight: 500;
+                        color: var(--color-4);
+                        font-size: 12px;
+                        line-height: 20px;
+                        padding: 20px 25px;
+                    }
+                }
+            
+            }
+            @include media('md'){
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background-color: var(--color-2);
+                left: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                // Let's make it hidden
+                transform: translate(0, -100%);
+                opacity: 0;
+                transition: all ease-in-out 300ms;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    li{
+                        a{
+                            font-size: 29px;
+                            font-weight: 600;
+                            line-height: 1;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+&.menu-open{
+        .nav-area{
+            @include media('md'){
+                transform: translate(0, 0%);
+                opacity: 1;
+            }
+        }
+        .menu-btn{
+            span{
+                &:nth-child(1){
+                    transform: rotate(45deg);
+                    top: 17px;
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transform: rotate(-45deg);
+                    top: -16px;
+                }
+            }
+        }
+    }
+}

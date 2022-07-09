@@ -1,0 +1,57 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+
+    /* Fonts */
+    --font-1: 'Poppins', sans-serif;
+
+    /* Colors */
+    --color-1: #fff;
+    --color-2: #00c6ff;
+    --color-3: #0072ff;
+    --color-4: #263546;
+    --color-5: #808080;
+    --color-6: #33cc66;
+    --color-7: #000;
+    --color-8: #dbdbdb;
+}
+
+@mixin transition($time:300ms){
+    transition: all ease-in-out $time;
+    -moz-transition: all ease-in-out $time;
+    -o-transition: all ease-in-out $time;
+    -webkit-transition:  all ease-in-out $time;
+}
+
+
+//---------Responsive Media mixin------
+
+@mixin media($breakpoint) {
+    @if $breakpoint=='xs' {
+        @media(max-width:566.98px){
+            @content;
+        }
+    }
+    @if $breakpoint=='sm' {
+        @media(max-width:775.98px){
+            @content;
+        }
+    }
+    @if $breakpoint=='md' {
+        @media(max-width:991.98px){
+            @content;
+        }
+    }
+    @if $breakpoint=='lg' {
+        @media(max-width:1199.98px){
+            @content;
+        }
+    }
+    @if $breakpoint=='xl' {
+        @media(min-width:1200px){
+            @content;
+        }
+    }
+}

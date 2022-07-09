@@ -1,0 +1,8 @@
+.img_hover_container {
+	/* This will come into play later */
+	perspective: 200px;
+}
+
+.img_hover {
+	transition: transform 0.5s;
+}

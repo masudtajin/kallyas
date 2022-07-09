@@ -1,0 +1,81 @@
+.blog-page{
+    margin-top: 226px;
+    .icon-area{
+        list-style: none;
+        li{
+            display: inline-block;
+            a{
+                text-decoration: none;
+                margin-right: 30px;
+                color: var(--color-4);
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+    .media-management{
+        box-shadow: 0 3px 49px var(--color-8);
+        .content-area{
+            padding: 30px;
+            p{
+                height: 80px;
+                overflow: hidden;
+                line-height: 25px;
+            }
+            .full-paragraph{
+                height: 100%;
+                overflow: visible;
+            }
+        }
+    }
+    @include media('md'){
+        margin-top: 140px;
+    }
+    .blog-content{
+        h4{
+            margin-bottom: 13px;
+        }
+        span{
+            color: var(--color-5);
+            font-size: 14px;
+            line-height: 25px;
+            border-bottom: 1px solid var(--color-8);
+            padding-bottom: 10px;
+            display: block;
+            margin-bottom: 30px;
+        }
+        h1{
+            margin-bottom: 100px;
+        }
+        h4:nth-child(2){
+                color: var(--color-2);
+                border-bottom: 1px solid var(--color-2);
+                padding: 0 0 30px ;
+        }
+        form{
+            position: relative;
+            input{
+                font-size: 16px;
+                line-height: 51px;
+                border-radius: 0;
+                border-color: var(--color-8);
+                padding-left: 23px;
+            }
+            .blog-btn{
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: var(--color-2);
+                border-radius: 0;
+                border-color: var(--color-2);
+                padding-left: 15px;
+                padding-right: 15px;
+                i{
+                    font-size: 16px;
+                    line-height: 51px;
+                    color: var(--color-1);
+                }
+            }
+        }
+    }
+}
